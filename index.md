@@ -2,4 +2,4 @@
 
 - [Política de Privacidad](privacy.html)
 - [Términos y Condiciones](terms.html)
-- [Eliminar cuenta](delete-acount.html)
+- [Eliminar cuenta](delete-account.html)

@@ -3,49 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminación de Datos y Cuenta - CoachProStats</title>
+    <title>Eliminación de Datos y Cuenta | CoachProStats</title>
+    
+    <!-- Fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #0f172a; border-bottom: 2px solid #FF6B35; padding-bottom: 10px; }
-        h2 { color: #1e293b; margin-top: 30px; }
-        p, li { color: #475569; }
-        .contact-box { background-color: #f8fafc; border-left: 4px solid #FF6B35; padding: 15px; margin: 20px 0; border-radius: 4px; }
-        .highlight { font-weight: bold; color: #0f172a; }
+        /* =========================================
+           CSS GLOBAL (El mismo de tu web)
+        ========================================= */
+        :root {
+            --bg-dark: #2D3446;      
+            --bg-light: #F8FAFC;     
+            --primary-orange: #FF7A00; 
+            --primary-green: #00E5B5;  
+            --text-light: #FFFFFF;
+            --text-dark: #1A1E29;
+            --text-muted: #B0B8C8; 
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
+        a { text-decoration: none; }
+
+        /* =========================================
+           MENÚ DE NAVEGACIÓN
+        ========================================= */
+        .navbar { position: fixed; top: 0; width: 100%; background-color: rgba(45, 52, 70, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 10px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo img { max-height: 60px; width: auto; display: block; }
+        .nav-links { list-style: none; display: flex; gap: 35px; }
+        .nav-links a { color: var(--text-light); font-weight: 600; font-size: 1rem; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary-orange); }
+
+        /* =========================================
+           CONTENEDOR LEGAL
+        ========================================= */
+        .legal-section {
+            padding: 160px 20px 100px 20px; /* Espacio para el menú fijo */
+            background-color: var(--bg-light);
+            min-height: 100vh;
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .legal-container h1 {
+            font-size: 2.5rem;
+            color: var(--bg-dark);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        /* =========================================
+           ESTILOS PARA EL TEXTO LEGAL
+        ========================================= */
+        .legal-content h2 {
+            font-size: 1.4rem;
+            color: var(--bg-dark);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .legal-content p {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 1rem;
+        }
+
+        .legal-content ul, .legal-content ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #444;
+        }
+
+        .legal-content li {
+            margin-bottom: 10px;
+        }
+
+        .legal-content a {
+            color: var(--primary-orange);
+            font-weight: 600;
+        }
+
+        /* Caja de contacto (adaptada de tu CSS original) */
+        .contact-box {
+            background-color: #F8FAFC;
+            border-left: 4px solid var(--primary-orange);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--primary-orange);
+            background-color: rgba(255, 122, 0, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Línea divisoria y fecha de actualización */
+        .legal-divider {
+            border: 0;
+            border-top: 1px solid #E2E8F0;
+            margin: 40px 0 20px 0;
+        }
+
+        .last-update {
+            font-size: 0.9rem;
+            color: #94A3B8;
+            text-align: center;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .legal-section { padding-top: 120px; }
+            .legal-container { padding: 30px 20px; }
+            .legal-container h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Eliminación de Datos y Cuenta</h1>
-    
-    <p>En <strong>CoachProStats</strong>, desarrollada por <strong>Ardiel Martínez Montesdeoca</strong>, respetamos tu privacidad y te damos el control total sobre tu información.</p>
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo-potential.png" alt="PD Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="disenos.html">Diseños</a></li>
+                <li><a href="proyecto.html">Proyecto</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h2>1. Cómo eliminar datos específicos SIN borrar tu cuenta</h2>
-    <p>Puedes eliminar parte o la totalidad de tus datos (equipos, jugadores, sesiones, partidos o fotos) sin necesidad de eliminar tu cuenta de usuario. Para ello tienes dos opciones:</p>
-    <ul>
-        <li><strong>Desde la propia app:</strong> Utiliza los iconos de la papelera o las opciones de borrado disponibles en cada módulo (por ejemplo, eliminando un jugador o un equipo entero).</li>
-        <li><strong>Desde tu Google Drive:</strong> Como la app guarda la información en tu propio espacio de Google Drive, puedes acceder a tu Drive en cualquier momento y borrar los archivos generados por la app (ej. <em>coachprostats_data.json</em>, carpetas de backups o fotos).</li>
-    </ul>
-    <p><strong>Datos que se eliminan:</strong> Toda la información que borres desaparecerá de tu dispositivo y de tu Google Drive.<br>
-    <strong>Datos que se conservan:</strong> Tu cuenta de usuario (correo y contraseña) seguirá activa para que puedas seguir usando la app y crear nuevos datos.</p>
+    <!-- CONTENIDO LEGAL -->
+    <section class="legal-section">
+        <div class="legal-container">
+            
+            <h1>Eliminación de Datos y Cuenta</h1>
+            <span class="last-update" style="text-align: left; margin-bottom: 30px;">CoachProStats</span>
 
-    <h2>2. Cómo solicitar la eliminación de tu CUENTA y todos tus datos</h2>
-    <p>Si deseas eliminar tu cuenta de usuario de CoachProStats y todos los datos asociados, sigue estos pasos:</p>
-    <ol>
-        <li>Envía un correo electrónico a <strong>salesdirector@potentialdevelopment.es</strong>.</li>
-        <li>En el asunto del correo, escribe: <span class="highlight">"Solicitud de eliminación de cuenta - CoachProStats"</span>.</li>
-        <li>En el cuerpo del mensaje, indica la <strong>dirección de correo electrónico</strong> con la que creaste la cuenta.</li>
-        <li>Procesaremos tu solicitud en un plazo máximo de 7 días hábiles y te confirmaremos cuando se haya completado.</li>
-    </ol>
-    <p><strong>Datos que se eliminan:</strong> Tu cuenta de autenticación (correo electrónico, credenciales y perfil).</p>
+            <div class="legal-content">
+                <p>En <strong>CoachProStats</strong>, desarrollada por <strong>Ardiel Martínez Montesdeoca</strong>, respetamos tu privacidad y te damos el control total sobre tu información.</p>
 
-    <h2>Retención de datos</h2>
-    <p>Por motivos de seguridad y prevención de fraudes, podríamos conservar registros de auditoría (logs) anónimos durante un máximo de 30 días antes de su eliminación definitiva. Estos registros no contienen información personal identificable.</p>
+                <h2>1. Cómo eliminar datos específicos SIN borrar tu cuenta</h2>
+                <p>Puedes eliminar parte o la totalidad de tus datos (equipos, jugadores, sesiones, partidos o fotos) sin necesidad de eliminar tu cuenta de usuario. Para ello tienes dos opciones:</p>
+                <ul>
+                    <li><strong>Desde la propia app:</strong> Utiliza los iconos de la papelera o las opciones de borrado disponibles en cada módulo (por ejemplo, eliminando un jugador o un equipo entero).</li>
+                    <li><strong>Desde tu Google Drive:</strong> Como la app guarda la información en tu propio espacio de Google Drive, puedes acceder a tu Drive en cualquier momento y borrar los archivos generados por la app (ej. <em>coachprostats_data.json</em>, carpetas de backups o fotos).</li>
+                </ul>
+                
+                <div class="contact-box">
+                    <p style="margin-bottom: 10px;"><strong>Datos que se eliminan:</strong> Toda la información que borres desaparecerá de tu dispositivo y de tu Google Drive.</p>
+                    <p style="margin-bottom: 0;"><strong>Datos que se conservan:</strong> Tu cuenta de usuario (correo y contraseña) seguirá activa para que puedas seguir usando la app y crear nuevos datos.</p>
+                </div>
 
-    <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 30px 0;">
-    <p style="font-size: 0.9em; color: #94a3b8;">Última actualización: 17 de octubre de 2026</p>
+                <h2>2. Cómo solicitar la eliminación de tu CUENTA y todos tus datos</h2>
+                <p>Si deseas eliminar tu cuenta de usuario de CoachProStats y todos los datos asociados, sigue estos pasos:</p>
+                <ol>
+                    <li>Envía un correo electrónico a <strong>salesdirector@potentialdevelopment.es</strong>.</li>
+                    <li>En el asunto del correo, escribe: <span class="highlight">"Solicitud de eliminación de cuenta - CoachProStats"</span>.</li>
+                    <li>En el cuerpo del mensaje, indica la <strong>dirección de correo electrónico</strong> con la que creaste la cuenta.</li>
+                    <li>Procesaremos tu solicitud en un plazo máximo de 7 días hábiles y te confirmaremos cuando se haya completado.</li>
+                </ol>
+                <p><strong>Datos que se eliminan:</strong> Tu cuenta de autenticación (correo electrónico, credenciales y perfil).</p>
+
+                <h2>Retención de datos</h2>
+                <p>Por motivos de seguridad y prevención de fraudes, podríamos conservar registros de auditoría (logs) anónimos durante un máximo de 30 días antes de su eliminación definitiva. Estos registros no contienen información personal identificable.</p>
+
+                <hr class="legal-divider">
+                <p class="last-update">Última actualización: 17 de octubre de 2026</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER LEGAL -->
+    <footer style="background-color: #242936; padding: 40px 20px; text-align: center; border-top: 1px solid #3a4258;">
+        <div style="max-width: 1200px; margin: 0 auto; color: var(--text-muted); font-size: 0.9rem;">
+            <p style="margin-bottom: 15px;">&copy; 2026 PotentialDevelopment. Todos los derechos reservados.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-orange)'" onmouseout="this.style.color='var(--text-muted)'">Política de Privacidad</a>
+                <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-orange)'" onmouseout="this.style.color='var(--text-muted)'">Términos de Uso</a>
+                <a href="delete-account.html" style="color: var(--text-light); text-decoration: none; font-weight: 600;">Eliminación de Cuenta</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
-</html>26</p>
+</html>
 
 </body>
 </html>

@@ -14,7 +14,14 @@
         a { text-decoration: none; }
         .navbar { position: fixed; top: 0; width: 100%; background-color: rgba(45, 52, 70, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 10px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo img { max-height: 60px; width: auto; display: block; }
+        .nav-logo img { 
+            max-height: 60px; 
+            width: auto; 
+            display: block; 
+            background-color: #FFFFFF; /* Fondo blanco */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 5px; /* Un poco de margen interno */
+        } 
         .nav-links { list-style: none; display: flex; gap: 35px; }
         .nav-links a { color: var(--text-light); font-weight: 600; font-size: 1rem; transition: color 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: var(--primary-orange); }
